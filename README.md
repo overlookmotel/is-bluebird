@@ -50,7 +50,7 @@ console.log( isBluebird.v2( Bluebird3.resolve() ) ); // false
 console.log( isBluebird.v2( Promise.resolve() ) ); // false (native JS promise)
 ```
 
-#### `isBluebird.v2.ctor( promise )` / `isBluebird.v3.ctor( promise )`
+#### `isBluebird.v2.ctor( Promise )` / `isBluebird.v3.ctor( Promise )`
 
 Returns true if is bluebird promise constructor of the specified version.
 
