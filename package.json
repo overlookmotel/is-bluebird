@@ -1,6 +1,6 @@
 {
   "name": "is-bluebird",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Is this a bluebird promise I see before me?",
   "main": "./lib/",
   "author": {
