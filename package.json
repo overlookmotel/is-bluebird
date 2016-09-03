@@ -16,8 +16,8 @@
   "dependencies": {
   },
   "devDependencies": {
-    "bluebird2": "^2.1.0",
-    "bluebird3": "^2.1.0",
+    "bluebird2": "^3.0.0",
+    "bluebird3": "^3.0.6",
     "mocha": "^2.5.3",
     "chai": "^3.5.0",
     "jshint": "^2.9.2",

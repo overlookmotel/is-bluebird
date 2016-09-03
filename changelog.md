@@ -7,3 +7,7 @@
 ## 1.0.1
 
 * Fix README typo
+
+## Next
+
+* Update `bluebird` dev dependencies
