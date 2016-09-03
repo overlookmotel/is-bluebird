@@ -11,3 +11,4 @@
 ## Next
 
 * Update `bluebird` dev dependencies
+* Update dev dependencies
