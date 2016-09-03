@@ -27,8 +27,20 @@ describe('isBluebird', function() {
 		expect(isBluebird(bluebird3Promise())).to.be.true;
 	});
 
+	it('returns false for bluebird v2 constructor', function() {
+		expect(isBluebird(Bluebird2)).to.be.false;
+	});
+
+	it('returns false for bluebird v3 constructor', function() {
+		expect(isBluebird(Bluebird3)).to.be.false;
+	});
+
 	testIfNativePromise('returns false for native JS promise', function() {
 		expect(isBluebird(nativePromise())).to.be.false;
+	});
+
+	testIfNativePromise('returns false for native JS promise constructor', function() {
+		expect(isBluebird(Promise)).to.be.false;
 	});
 
 	it('returns false for undefined', function() {
@@ -42,6 +54,12 @@ describe('isBluebird', function() {
 	it('returns false for object', function() {
 		expect(isBluebird({_addCallbacks: function() {}})).to.be.false;
 	});
+
+	it('returns false for function', function() {
+		var fn = function() {};
+		fn._addCallbacks = function() {};
+		expect(isBluebird(fn)).to.be.false;
+	});
 });
 
 describe('isBluebird.ctor', function() {
@@ -53,8 +71,20 @@ describe('isBluebird.ctor', function() {
 		expect(isBluebird.ctor(Bluebird3)).to.be.true;
 	});
 
+	it('returns false for bluebird v2 promise', function() {
+		expect(isBluebird.ctor(bluebird2Promise())).to.be.false;
+	});
+
+	it('returns false for bluebird v3 promise', function() {
+		expect(isBluebird.ctor(bluebird3Promise())).to.be.false;
+	});
+
 	testIfNativePromise('returns false for native JS promise constructor', function() {
 		expect(isBluebird.ctor(Promise)).to.be.false;
+	});
+
+	testIfNativePromise('returns false for native JS promise', function() {
+		expect(isBluebird.ctor(nativePromise())).to.be.false;
 	});
 
 	it('returns false for undefined', function() {
@@ -70,6 +100,12 @@ describe('isBluebird.ctor', function() {
 		obj.prototype = {_addCallbacks: function() {}};
 		expect(isBluebird.ctor(obj)).to.be.false;
 	});
+
+	it('returns false for function', function() {
+		var fn = function() {};
+		fn._addCallbacks = function() {};
+		expect(isBluebird.ctor(fn)).to.be.false;
+	});
 });
 
 describe('isBluebird.v2', function() {
@@ -81,8 +117,20 @@ describe('isBluebird.v2', function() {
 		expect(isBluebird.v2(bluebird3Promise())).to.be.false;
 	});
 
+	it('returns false for bluebird v2 constructor', function() {
+		expect(isBluebird.v2(Bluebird2)).to.be.false;
+	});
+
+	it('returns false for bluebird v3 constructor', function() {
+		expect(isBluebird.v2(Bluebird3)).to.be.false;
+	});
+
 	testIfNativePromise('returns false for native JS promise', function() {
 		expect(isBluebird.v2(nativePromise())).to.be.false;
+	});
+
+	testIfNativePromise('returns false for native JS promise constructor', function() {
+		expect(isBluebird.v2(Promise)).to.be.false;
 	});
 
 	it('returns false for undefined', function() {
@@ -96,6 +144,12 @@ describe('isBluebird.v2', function() {
 	it('returns false for object', function() {
 		expect(isBluebird.v2({_addCallbacks: function() {}})).to.be.false;
 	});
+
+	it('returns false for function', function() {
+		var fn = function() {};
+		fn._addCallbacks = function() {};
+		expect(isBluebird.v2(fn)).to.be.false;
+	});
 });
 
 describe('isBluebird.v2.ctor', function() {
@@ -107,8 +161,20 @@ describe('isBluebird.v2.ctor', function() {
 		expect(isBluebird.v2.ctor(Bluebird3)).to.be.false;
 	});
 
+	it('returns false for bluebird v2 promise', function() {
+		expect(isBluebird.v2.ctor(bluebird2Promise())).to.be.false;
+	});
+
+	it('returns false for bluebird v3 promise', function() {
+		expect(isBluebird.v2.ctor(bluebird3Promise())).to.be.false;
+	});
+
 	testIfNativePromise('returns false for native JS promise constructor', function() {
 		expect(isBluebird.v2.ctor(Promise)).to.be.false;
+	});
+
+	testIfNativePromise('returns false for native JS promise', function() {
+		expect(isBluebird.v2.ctor(nativePromise())).to.be.false;
 	});
 
 	it('returns false for undefined', function() {
@@ -124,6 +190,12 @@ describe('isBluebird.v2.ctor', function() {
 		obj.prototype = {_addCallbacks: function() {}};
 		expect(isBluebird.v2.ctor(obj)).to.be.false;
 	});
+
+	it('returns false for function', function() {
+		var fn = function() {};
+		fn._addCallbacks = function() {};
+		expect(isBluebird.v2.ctor(fn)).to.be.false;
+	});
 });
 
 describe('isBluebird.v3', function() {
@@ -135,8 +207,20 @@ describe('isBluebird.v3', function() {
 		expect(isBluebird.v3(bluebird2Promise())).to.be.false;
 	});
 
+	it('returns false for bluebird v2 constructor', function() {
+		expect(isBluebird.v3(Bluebird2)).to.be.false;
+	});
+
+	it('returns false for bluebird v3 constructor', function() {
+		expect(isBluebird.v3(Bluebird3)).to.be.false;
+	});
+
 	testIfNativePromise('returns false for native JS promise', function() {
 		expect(isBluebird.v3(nativePromise())).to.be.false;
+	});
+
+	testIfNativePromise('returns false for native JS promise constructor', function() {
+		expect(isBluebird.v3(Promise)).to.be.false;
 	});
 
 	it('returns false for undefined', function() {
@@ -150,6 +234,12 @@ describe('isBluebird.v3', function() {
 	it('returns false for object', function() {
 		expect(isBluebird.v3({_addCallbacks: function() {}})).to.be.false;
 	});
+
+	it('returns false for function', function() {
+		var fn = function() {};
+		fn._addCallbacks = function() {};
+		expect(isBluebird.v3(fn)).to.be.false;
+	});
 });
 
 describe('isBluebird.v3.ctor', function() {
@@ -161,8 +251,20 @@ describe('isBluebird.v3.ctor', function() {
 		expect(isBluebird.v3.ctor(Bluebird2)).to.be.false;
 	});
 
+	it('returns false for bluebird v2 promise', function() {
+		expect(isBluebird.v3.ctor(bluebird2Promise())).to.be.false;
+	});
+
+	it('returns false for bluebird v3 promise', function() {
+		expect(isBluebird.v3.ctor(bluebird3Promise())).to.be.false;
+	});
+
 	testIfNativePromise('returns false for native JS promise constructor', function() {
 		expect(isBluebird.v3.ctor(Promise)).to.be.false;
+	});
+
+	testIfNativePromise('returns false for native JS promise', function() {
+		expect(isBluebird.v3.ctor(nativePromise())).to.be.false;
 	});
 
 	it('returns false for undefined', function() {
@@ -177,6 +279,12 @@ describe('isBluebird.v3.ctor', function() {
 		var obj = {};
 		obj.prototype = {_addCallbacks: function() {}};
 		expect(isBluebird.v3.ctor(obj)).to.be.false;
+	});
+
+	it('returns false for function', function() {
+		var fn = function() {};
+		fn._addCallbacks = function() {};
+		expect(isBluebird.v3.ctor(fn)).to.be.false;
 	});
 });
 

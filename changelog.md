@@ -12,4 +12,5 @@
 
 * Update `bluebird` dev dependencies
 * Update dev dependencies
+* Additional tests
 * Travis CI tests all branches (to enable `greenskeeper.io`)
