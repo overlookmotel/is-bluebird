@@ -19,3 +19,4 @@
 
 * Update `bluebird3` dependency to v3.0.7
 * Update dev dependencies
+* Travis CI test against node v7
