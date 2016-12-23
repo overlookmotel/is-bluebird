@@ -18,3 +18,4 @@
 ## Next
 
 * Update `bluebird3` dependency to v3.0.7
+* Update dev dependencies
