@@ -1,5 +1,7 @@
 # is-bluebird.js
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/overlookmotel/is-bluebird.svg)](https://greenkeeper.io/)
+
 # Is this a bluebird promise I see before me?
 
 [![NPM version](https://img.shields.io/npm/v/is-bluebird.svg)](https://www.npmjs.com/package/is-bluebird)
